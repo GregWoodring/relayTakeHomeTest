@@ -11,7 +11,7 @@ const DataTable = props => {
 
 function mapStateToProps(state) {
     return {
-        voterDataArray: state.voters.voterDataArray
+        voterArray: state.voters.voterArray
     }
 }
 
