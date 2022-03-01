@@ -2,15 +2,13 @@ import React from 'react'
 import {connect} from 'react-redux';
 import DataSelector from '../DataSelector/DataSelector';
 import { addVoterArray } from '../../reducers/votersReducer';
-import store from '../../store';
+import './Header.scss'
 const Header = props => {
     //fetching data here since it'll be rendered on page load
 
       console.log(props)
     return (
-        <div onClick={() => {
-            console.log('state is', store.getState())
-        }}>
+        <div className='header'>
             <h1>Top Segment of All Voters:</h1>
             <h2>Percentage of All Voters that are {props.selectedSegmentName} - {props.selectedSegmentCount} - {props.selectedSegmentPercent}% </h2>
             <DataSelector />

@@ -5,9 +5,9 @@ const DataSelector = props => {
 
     return (
         <div>
-            <select onChange={e => changeSelection(e.target.value)}>
+            <select onChange={e => props.changeSelection(e.target.value)}>
                 {props.properties.map((item, index) => {
-                    return <option value={item}>{item}</option>
+                    return <option value={item} key={index}>{item}</option>
                 })}
             </select>
         </div>
@@ -20,4 +20,4 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps, {})(DataSelector);
+export default connect(mapStateToProps, {changeSelection})(DataSelector);
