@@ -15,9 +15,7 @@ function App(props) {
             //this could be improved further using redux-promise-middleware 
             //to display loading animations while awaiting the promise
             props.addVoterArray(data.rows); 
-            
         }).catch(err => console.error(err));
-
 }, [])
   return (
     <div className="App">

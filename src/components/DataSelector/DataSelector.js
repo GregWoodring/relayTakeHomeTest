@@ -5,7 +5,7 @@ const DataSelector = props => {
 
     return (
         <div>
-            <select onChange={e => props.changeSelection(e.target.value)}>
+            <select data-testid='selector' onChange={e => props.changeSelection(e.target.value)}>
                 {props.properties.map((item, index) => {
                     return <option value={item} key={index}>{item}</option>
                 })}

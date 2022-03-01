@@ -1,4 +1,9 @@
-Requirements:
+## How To Run
+
+    1. npm i
+    2. npm start
+
+## Requirements:
 Git commit history is included in the project
 
 Please take us along your development journey on this project to show your thought process via commits. Backtracking and fixing mistakes are all part of the development process and perfection is not a requirement.

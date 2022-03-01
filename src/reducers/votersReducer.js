@@ -36,7 +36,7 @@ export default function reducer(state = initialState, action) {
                     properties.push(property)
                 }
             }
-            let percent = (Math.floor(((totals[highestProperty]/totals.total)*100))/100)//need two decimal places
+            let percent = (Math.floor(((totals[highestProperty]/totals.total)*10000))/100)//need two decimal places
             return {
                 ...state,
                 voterArray: payload, 
@@ -48,7 +48,7 @@ export default function reducer(state = initialState, action) {
             }
         }
         case CHANGE_SELECTION: {
-            let percent = (Math.floor(((state.totals[payload]/state.totals.total)*100))/100)//need two decimal places
+            let percent = (Math.floor(((state.totals[payload]/state.totals.total)*10000))/100)//need two decimal places
             return {
                 ...state,
                 selectedSegmentName: payload,

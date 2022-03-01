@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 
 const DataRow = props => {
     return (
-        <div className='data-row'>
+        <div className='data-row' data-testid="data-row">
             <div>{props.ward}</div>
             <div>{props.dem}</div>
             <div>{props.rep}</div>
@@ -16,7 +16,7 @@ const DataRow = props => {
             <div>{props.female}</div>
             <div>{props.unknown_sex}</div>
             <div>{props.total}</div>
-            <div>{(Math.floor((props[props.selectedSegmentName]/props.total)*100)/100)}</div>
+            <div>{(Math.floor((props[props.selectedSegmentName]/props.total)*10000)/100)}</div>
         </div>
     )
 }
