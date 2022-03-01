@@ -3,7 +3,8 @@ const initialState = {
     selectedSegmentName: '',
     selectedSegmentCount: 0,
     selectedSegmentPercent: 0,
-    totalPop: 0
+    totalPop: 0,
+    properties: []
 }
 
 /* example data
@@ -30,17 +31,20 @@ export default function reducer(state = initialState, action) {
             let totals = payload.find(item => item.ward === 'Totals:')
             console.log('totals', totals)
             let highestProperty = ''
+            let properties = []
             for(let property in totals) {
                 console.log('highest', highestProperty)
                 if(!(['total', 'ward', 'the_geom_webmercator', 'the_geom'].includes(property))) {
                     console.log(property, totals[property], highestProperty, totals[highestProperty])
                     highestProperty = (totals[highestProperty] <= totals[property]) || highestProperty === '' ? property : highestProperty;
+                    properties.push(property)
                 }
             }
             let percent = (Math.floor(((totals[highestProperty]/totals.total)*100))/100)//need two decimal places
             return {
                 ...state,
-                voterArray: [...payload], 
+                voterArray: payload, 
+                properties: properties,
                 selectedSegmentName: highestProperty,
                 selectedSegmentCount: totals[highestProperty],
                 selectedSegmentPercent: percent, 
