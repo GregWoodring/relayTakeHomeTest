@@ -1,0 +1,16 @@
+.data-table {
+    display: flex;
+    flex-direction: column;
+    width: 90vw;
+}
+
+.data-row {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+
+    div {
+        width: calc(90vw/13)
+    }
+}
